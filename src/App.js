@@ -25,7 +25,7 @@ const portfolioConfig = {
     { name: "MySQL", level: 85 },
   ],
   projects: [
-    { title: "Personal Portfolio", description: "A dynamic, animated portfolio showcasing my skills and projects.", link: "https://github.com/GayathriIsurika/Presentation-Generator" },
+    { title: "Personal Portfolio", description: "A dynamic, animated portfolio showcasing my skills and projects.", link: "https://github.com/GayathriIsurika/my-portfolio" },
     { title: "Presentation-Generator", description: "Group Project.A smart, AI-powered presentation platform built with Ballerina", link: "https://github.com/GayathriIsurika/Presentation-Generator" },
     { title: "Health-Care-Hospital", description: "My first web project.", link: "https://github.com/GayathriIsurika/Health-Care-Hospital" },
   ]
@@ -223,5 +223,6 @@ function App() {
     </>
   );
 }
+
 
 export default App;
