@@ -19,7 +19,7 @@ const portfolioConfig = {
   skills: [
     { name: "React", level: 70 },
     { name: "Java", level: 75 },
-    { name: "HTML5 & CSS", level: 95 },
+    { name: "HTML & CSS", level: 95 },
     { name: "JavaScript", level: 85 },
     { name: "Figma", level: 95 },
     { name: "MySQL", level: 85 },
@@ -285,3 +285,4 @@ function App() {
 }
 
 export default App;
+
