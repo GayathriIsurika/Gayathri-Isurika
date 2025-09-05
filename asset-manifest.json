@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/Gayathri-Isurika/static/css/main.9b230af3.css",
-    "main.js": "/Gayathri-Isurika/static/js/main.f5271350.js",
+    "main.js": "/Gayathri-Isurika/static/js/main.f2861a05.js",
     "static/js/453.ad7768ec.chunk.js": "/Gayathri-Isurika/static/js/453.ad7768ec.chunk.js",
-    "static/media/my.jpg": "/Gayathri-Isurika/static/media/my.e8191ac285ad62dd9323.jpg",
+    "static/media/my.jpg": "/Gayathri-Isurika/static/media/my.42c1ac32d6f7092c54aa.jpg",
     "index.html": "/Gayathri-Isurika/index.html",
     "main.9b230af3.css.map": "/Gayathri-Isurika/static/css/main.9b230af3.css.map",
-    "main.f5271350.js.map": "/Gayathri-Isurika/static/js/main.f5271350.js.map",
+    "main.f2861a05.js.map": "/Gayathri-Isurika/static/js/main.f2861a05.js.map",
     "453.ad7768ec.chunk.js.map": "/Gayathri-Isurika/static/js/453.ad7768ec.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.9b230af3.css",
-    "static/js/main.f5271350.js"
+    "static/js/main.f2861a05.js"
   ]
 }
