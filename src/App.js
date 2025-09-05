@@ -25,7 +25,7 @@ const portfolioConfig = {
     { name: "MySQL", level: 85 },
   ],
   projects: [
-    { title: "Personal Portfolio", description: "A dynamic, animated portfolio showcasing my skills and projects.", link: "https://github.com/GayathriIsurika/my-portfolio" },
+    { title: "Personal Portfolio", description: "A dynamic, animated portfolio showcasing my skills and projects.", link: "https://github.com/GayathriIsurika/Presentation-Generator" },
     { title: "Presentation-Generator", description: "Group Project.A smart, AI-powered presentation platform built with Ballerina", link: "https://github.com/GayathriIsurika/Presentation-Generator" },
     { title: "Health-Care-Hospital", description: "My first web project.", link: "https://github.com/GayathriIsurika/Health-Care-Hospital" },
   ]
@@ -66,7 +66,7 @@ const Navigation = ({ activeSection, setActiveSection }) => (
 );
 
 const HomeSection = ({setActiveSection}) => (
-  <div className="home-section">
+  <div className="home-section" id="Home">
     <div className="home-content">
       <div className="home-text">
         <h1 className="greeting">Hi,</h1>
@@ -115,14 +115,14 @@ const ContentSection = ({ section }) => {
     switch (section) {
       case 'About':
         return (
-          <div className="content-section">
+          <div className="content-section" id="About">
             <h2>About Me</h2>
             <p>{portfolioConfig.about}</p>
           </div>
         );
       case 'Skills':
         return (
-          <div className="content-section">
+          <div className="content-section" id="Skills">
             <h2>My Skills</h2>
             <div className="skills-grid">
               {portfolioConfig.skills.map(skill => (
@@ -138,7 +138,7 @@ const ContentSection = ({ section }) => {
         );
       case 'Works':
         return (
-          <div className="content-section">
+          <div className="content-section" id="Works">
             <h2>My Projects</h2>
             <div className="projects-grid">
               {portfolioConfig.projects.map(project => (
@@ -152,7 +152,7 @@ const ContentSection = ({ section }) => {
         );
       case 'Contact':
         return (
-          <div className="content-section">
+          <div className="content-section"id="Contact">
             <h2>Contact Me</h2>
             <p>I'd love to hear from you! Feel free to reach out for collaborations, opportunities, or just to say hello.</p>
             <div className="contact-links">
@@ -203,26 +203,85 @@ const Typewriter = ({ text, speed = 80, pause = 1200 }) => {
   return <span className="typewriter">{displayed}</span>;
 };
 
+// --- Footer Component ---
+const Footer = ({setActiveSection}) => (
+  <footer className="footer">
+    {/* SVG Animated Wave */}
+    <div className="footer-wave">
+      <svg viewBox="0 0 1440 120" width="100%" height="120" preserveAspectRatio="none">
+        <defs>
+          <linearGradient id="footerGradient" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stopColor="#667eea" />
+            <stop offset="100%" stopColor="#764ba2" />
+          </linearGradient>
+        </defs>
+        <path
+          fill="url(#footerGradient)"
+          d="M0,80 C360,120 1080,40 1440,80 L1440,120 L0,120 Z"
+        >
+          <animate
+            attributeName="d"
+            dur="8s"
+            repeatCount="indefinite"
+            values="
+              M0,80 C360,120 1080,40 1440,80 L1440,120 L0,120 Z;
+              M0,60 C400,100 1040,60 1440,100 L1440,120 L0,120 Z;
+              M0,80 C360,120 1080,40 1440,80 L1440,120 L0,120 Z
+            "
+          />
+        </path>
+      </svg>
+    </div>
+    {/* End SVG Animated Wave */}
+
+    <div className="footer-content">
+      <div className="footer-social">
+        <a href={portfolioConfig.contact.github} target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+          <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.563 21.8 24 17.302 24 12c0-6.627-5.373-12-12-12z"/></svg>
+        </a>
+        <a href={portfolioConfig.contact.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+          <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.761 0 5-2.239 5-5v-14c0-2.761-2.239-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.268c-.966 0-1.75-.784-1.75-1.75s.784-1.75 1.75-1.75 1.75.784 1.75 1.75-.784 1.75-1.75 1.75zm13.5 11.268h-3v-5.604c0-1.337-.026-3.063-1.868-3.063-1.868 0-2.154 1.459-2.154 2.967v5.7h-3v-10h2.881v1.367h.041c.401-.761 1.379-1.563 2.841-1.563 3.039 0 3.601 2.002 3.601 4.604v5.592z"/></svg>
+        </a>
+        <a href={portfolioConfig.contact.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+          <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.849.07 1.366.062 2.633.334 3.608 1.309.975.975 1.247 2.242 1.309 3.608.058 1.265.069 1.645.069 4.849s-.011 3.584-.069 4.849c-.062 1.366-.334 2.633-1.309 3.608-.975.975-2.242 1.247-3.608 1.309-1.265.058-1.645.069-4.849.069s-3.584-.011-4.849-.069c-1.366-.062-2.633-.334-3.608-1.309-.975-.975-1.247-2.242-1.309-3.608-.058-1.265-.069-1.645-.069-4.849s.011-3.584.069-4.849c.062-1.366.334-2.633 1.309-3.608.975-.975 2.242-1.247 3.608-1.309 1.265-.058 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.012-4.947.07-1.276.058-2.687.334-3.737 1.384-1.05 1.05-1.326 2.461-1.384 3.737-.058 1.28-.07 1.688-.07 4.947s.012 3.667.07 4.947c.058 1.276.334 2.687 1.384 3.737 1.05 1.05 2.461 1.326 3.737 1.384 1.28.058 1.688.07 4.947.07s3.667-.012 4.947-.07c1.276-.058 2.687-.334 3.737-1.384 1.05-1.05 1.326-2.461 1.384-3.737.058-1.28.07-1.688.07-4.947s-.012-3.667-.07-4.947c-.058-1.276-.334-2.687-1.384-3.737-1.05-1.05-2.461-1.326-3.737-1.384-1.28-.058-1.688-.07-4.947-.07zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zm0 10.162a3.999 3.999 0 1 1 0-7.998 3.999 3.999 0 0 1 0 7.998zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+        </a>
+        <a href={`mailto:${portfolioConfig.contact.email}`} aria-label="Email">
+          <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M12 13.065l-11.99-7.065v14h23.98v-14zm11.99-9.065h-23.98l11.99 7.065z"/></svg>
+        </a>
+      </div>
+       <div className="footer-links">
+      <a href='#' onClick={() => setActiveSection('Home')}>Home</a>
+      <a href='#' onClick={() => setActiveSection('About')}>About</a>
+      <a href='#' onClick={() => setActiveSection('Skills')}>Skills</a>
+      <a href='#' onClick={() => setActiveSection('Works')}>Works</a>
+      <a href='#' onClick={() => setActiveSection('Contact')}>Contact</a>
+    </div>
+      <div className="footer-text">
+        © {new Date().getFullYear()} <b>Gayathri Isurika</b> | All Rights Reserved
+      </div>
+    </div>
+  </footer>
+);
+
 // --- Main App Component ---
 function App() {
   const [activeSection, setActiveSection] = useState('Home');
-  
+
   return (
     <>
       <AnimatedBackground />
-      
       <div className="container">
         <Navigation activeSection={activeSection} setActiveSection={setActiveSection} />
-        
         {activeSection === 'Home' ? (
           <HomeSection setActiveSection={setActiveSection} />
         ) : (
           <ContentSection section={activeSection} />
         )}
       </div>
+    
+      <Footer setActiveSection={setActiveSection} />
     </>
   );
 }
-
 
 export default App;
